@@ -12,6 +12,14 @@ const init = async () => {
     },
   });
 
+  server.route({
+    method: 'GET',
+    path: '/',
+    handler: (request, h) => {
+      return `Hello, World! This is from Instance 1`;
+    },
+  });
+
   server.route(routes);
 
   await server.start();
